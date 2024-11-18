@@ -1,0 +1,11 @@
+[metadata]
+name = "pyglog"
+version = "0.1.0"
+description = "Python generic logger, generate logs on specific format for a best ingestion to ELK, Openssearch ans more ..."
+author = "Yani IDOUGHI"
+author_email = "idoughiyani@gmail.com"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--disable-warnings"
+pythonpath = ["logger"]
