@@ -1,3 +1,15 @@
 **/__pycache__**
+__pycache__**
+*.pyc
+*.pyo
+*.egg-info/
+.ruff*
+.coverage**
+.pytest**
+htmlcov/**
+
+dist/
+build/
+
 venv
 tests/

@@ -1,10 +1,18 @@
 LOG_LEVEL ?=info
 LOG_FORMAT ?=standard
+PYTHONPATH =?$(pwd)
 
 .PHONY:	install
 install:
 	pip install -r requirements.txt  --root-user-action
 
+.PHONY:	test-cov
+test-cov:
+	pytest --cov=src/logger --cov-report=term  tests/unit
+
+.PHONY:	test-cov-html
+test-cov-html:
+	pytest --cov=src/logger --cov-report=term  tests/unit
 .PHONY:	log-info-standard
 log-info-standard:
 	LOG_LEVEL=info LOG_FORMAT=standard python main.py

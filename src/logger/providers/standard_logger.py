@@ -1,13 +1,15 @@
 from .base_logger_factory import BaseLoggerFactory
 import logging
 
-class StandardLoggerFactory(BaseLoggerFactory):
 
+class StandardLoggerFactory(BaseLoggerFactory):
     _name: str = "standard_logger"
 
-    def __init__(self, name):
+    def __init__(self, name=None):
         self._name = name if name else self._name
-        self._formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+        self._formatter = logging.Formatter(
+            "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+        )
         super().__init__(self._name)
 
     def create_logger(self) -> logging.Logger:

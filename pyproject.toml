@@ -1,11 +1,30 @@
 [metadata]
 name = "pyglog"
-version = "0.1.0"
-description = "Python generic logger, generate logs on specific format for a best ingestion to ELK, Openssearch ans more ..."
+version = "1.0.0"
+description = "Python generic logger for seamless integration with ELK, OpenSearch, and more."
+long_description = "file: README.md"
+long_description_content_type =" text/markdown"
 author = "Yani IDOUGHI"
 author_email = "idoughiyani@gmail.com"
+url = "https://github.com/yid0/pyglog"
+keywords = ["logging", "ELK", "OpenSearch", "Python"]
+
+[project]
+name = "pyglog"
+version = "1.0.0"
+description = "Python generic logger for seamless integration with ELK, OpenSearch, and more."
+readme = "README.md"
+
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "--disable-warnings"
 pythonpath = ["logger"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[options]
+packages = "find:"
+python_requires = ">=3.10"
