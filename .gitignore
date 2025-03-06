@@ -6,10 +6,10 @@ __pycache__**
 .ruff*
 .coverage**
 .pytest**
-htmlcov/**
 
+htmlcov/
 dist/
 build/
 
-venv
+venv/
 tests/

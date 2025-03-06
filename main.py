@@ -1,5 +1,7 @@
-from src.logger import LoggerFactory
 from logging import _nameToLevel
+
+from src.pyglog import LoggerFactory
+from src.pyglog.config import load_env
 
 
 def pyg(name: str) -> str:
@@ -7,10 +9,8 @@ def pyg(name: str) -> str:
 
 
 def log(log_format=None, log_level=None) -> None:
-    from os import getenv
-
-    log_format = str(getenv("LOG_FORMAT")).upper()
-    log_level = str(getenv("LOG_LEVEL")).upper()
+    log_format = load_env()["LOG_FORMAT"]
+    log_level = load_env()["LOG_LEVEL"]
 
     root = LoggerFactory.get_logger_factory().create_logger()
     root.log(level=_nameToLevel[log_level], msg=pyg(root.name))
@@ -19,9 +19,10 @@ def log(log_format=None, log_level=None) -> None:
     logger.log(level=_nameToLevel[log_level], msg=pyg(logger.name))
 
 
-def pyglog() -> None:
+def main() -> None:
+    pyg("main")
     log()
 
 
-# run pyglog
-pyglog()
+if __name__ == "__main__":
+    main()

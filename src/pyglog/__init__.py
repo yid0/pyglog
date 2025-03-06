@@ -4,10 +4,12 @@ from .providers import (
     StandardLoggerFactory,
     OpenSearchLoggerFactory,
 )
+from .config import load_env
 
 __all__ = [
     LoggerFactory,
     ElasticsLoggerFactory,
     StandardLoggerFactory,
     OpenSearchLoggerFactory,
+    load_env
 ]

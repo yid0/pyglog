@@ -1,6 +1,6 @@
 [metadata]
 name = "pyglog"
-version = "1.0.0"
+version = "1.0.1"
 description = "Python generic logger for seamless integration with ELK, OpenSearch, and more."
 long_description = "file: README.md"
 long_description_content_type =" text/markdown"
@@ -19,7 +19,7 @@ readme = "README.md"
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "--disable-warnings"
-pythonpath = ["logger"]
+pythonpath = ["src"]
 
 [build-system]
 requires = ["setuptools"]

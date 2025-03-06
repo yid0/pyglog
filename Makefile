@@ -8,11 +8,35 @@ install:
 
 .PHONY:	test-cov
 test-cov:
-	pytest --cov=src/logger --cov-report=term  tests/unit
+	pytest --cov=src/pyglog --cov-report=term tests/unit
 
 .PHONY:	test-cov-html
 test-cov-html:
-	pytest --cov=src/logger --cov-report=term  tests/unit
+	pytest --cov=src/pyglog --cov-report=html tests/unit
+
+.PHONY:	build
+build:
+	make clean && python -m build
+
+.PHONY: clean
+clean:
+	rm -rf dist/ build/ *.egg-info
+	find . -name "__pycache__" -type d -exec rm -rf {} +
+	find . -name "*.pyc" -exec rm -f {} +
+	find . -name "*.pyo" -exec rm -f {} +
+
+.PHONY:	lint
+lint:
+	ruff check --fix && ruff format
+
+.PHONY:	check
+check:
+	ruff check --watch
+
+.PHONY:	publish
+publish:
+	twine upload --verbose dist/*	
+
 .PHONY:	log-info-standard
 log-info-standard:
 	LOG_LEVEL=info LOG_FORMAT=standard python main.py
