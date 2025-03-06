@@ -1,4 +1,8 @@
-# **Pyglog: Python Generic Logger**
+# **Python Generic Logger**
+
+<div align="center">
+  <img src="./assets/pyglog.jpg" alt="Pyglog Logo" width="600"/>
+</div>
 
 **Pyglog** is a versatile and modular logging solution for Python applications, designed to meet modern logging needs with flexibility and efficiency. It enables developers to generate logs in specific, customizable formats, ensuring seamless integration with powerful tools such as **ELK Stack**, **OpenSearch**, and other log aggregation systems.
 
